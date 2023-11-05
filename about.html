@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>О проекте</title>
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <script src="javascripts/jquery-3.6.1.js" charset="utf-8"></script>
+  </head>
+
+  <body>
+    <div class="all_about">
+      <!-- shapka -->
+      <div class="menubar">
+        <a href="index.html"><img src="images/logo.svg" alt="" /></a>
+        <a href="wikimedium.html">Wiki</a>
+        <a id="color-green" href="about.html">О проекте</a>
+        <a href="page.html">Кошечки</a>
+      </div>
+
+      <section class="bottom_block">
+        <h2 class="text_start">
+          Возможность самостоятельного и курированого обучения
+        </h2>
+        <p></p>
+        <a href="https://github.com/IrinaApolonnik/-Narkomfin-"
+          >Исходный код на GitHub</a
+        >
+        <a class="btn" href="https://design.hse.ru/dir/programming"
+          >Курс в Школе Дизайна</a
+        >
+      </section>
+    </div>
+    <!-- ТАБЛИЦА -->
+    <!-- 10- таблица -->
+    <div class="table_main">
+      <h1 class="table_main1">Таблица с добавлением полей</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Урок</th>
+            <th>Дисциплина</th>
+            <th>Число</th>
+            <th>Предмет</th>
+            <th>Тип задания</th>
+            <th>+</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td>
+              <a
+                href="https://ru.hexlet.io/courses/css-content/lessons/forms/theory_unit"
+                >Создаём композицию</a
+              >
+            </td>
+            <td>4 апреля 2023</td>
+            <td><span class="redType">Айдентика</span></td>
+            <td><span class="greenType">Технологии дизайна</span></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <form class="form1">
+        <input type="text" name="week" placeholder="Урок" />
+        <input type="text" name="theme" placeholder="Дисциплина" />
+        <input type="text" name="date" placeholder="Число" />
+        <select name="desc">
+          <option value="Технология">Креативное проектирование</option>
+          <option value="Арт-практика">Арт-практика</option>
+        </select>
+        <select name="type">
+          <option value="Воркшоп">Воркшоп</option>
+          <option value="Лекция">Лекция</option>
+          <option value="Ревью">Ревью</option>
+        </select>
+        <button type="button">+</button>
+      </form>
+
+      <script>
+        document
+          .querySelector('form button')
+          .addEventListener('click', function () {
+            let week = document.querySelector('[name="week"]').value
+            let theme = document.querySelector('[name="theme"]').value
+            let date = document.querySelector('[name="date"]').value
+            let desc = document.querySelector('[name="desc"]').value
+            let type = document.querySelector('[name="type"]').value
+
+            let newRow =
+              '<tr><td>' +
+              week +
+              '</td><td><a href="#">' +
+              theme +
+              '</a></td><td>' +
+              date +
+              '</td><td><span class="redType">' +
+              desc +
+              '</span></td><td><span class="greenType">' +
+              type +
+              '</span></td><td></td></tr>'
+
+            document
+              .querySelector('table tbody')
+              .insertAdjacentHTML('beforeend', newRow)
+          })
+      </script>
+    </div>
+
+    <!-- таблица с изображениями внутри -->
+    <div class="table_image">
+      <h1 class="table-name">Таблица с изображениями</h1>
+
+      <!-- Таблица с изображением на фоне -->
+      <table class="urlo">
+        <tr>
+          <td>
+            <img class="catimg" src="images/cat.png" />
+          </td>
+        </tr>
+      </table>
+
+      <!-- Таблица с изображением внутри ячейки -->
+      <table class="burlo">
+        <tr>
+          <td><img class="catimg2" src="images/cat2.png" /></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 11-Фрагмент с работающе формой для отправки информации на удаленный сервер контактных данных посетителя (фамилия, имя, мобильный телефон, электронка, дата отправки сообщения); -->
+
+    <h1 class="h-tittle2">Форма</h1>
+    <form class="form2" action="/apply/" method="POST">
+      <label class="mars-once-name">
+        Ваше имя:
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Логинова Вероника"
+          required
+          autofocus
+        />
+      </label>
+
+      <label>
+        Почта:
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="vereneja1708@gmail.com"
+          required
+        />
+      </label>
+
+      <label>
+        Сколько Вам лет?
+        <input type="number" name="age" placeholder="19" required />
+      </label>
+
+      <label>
+        Ваш номер телефона:
+        <input type="tel" name="phone" placeholder="+79671980108" required />
+      </label>
+
+      <label>
+        Профессия:
+        <select name="specialization" required>
+          <option value="engineer" selected>Дворник</option>
+          <option value="scientist">Ученик ВШЭ</option>
+          <option value="psychologist">Прораб</option>
+          <option value="other">Другое</option>
+        </select>
+      </label>
+
+      <label>
+        Дата отправки сообщения:
+        <input type="date" id="messageDate" name="messageDate" required />
+      </label>
+
+      <button class="send-form" type="submit">Отправить!</button>
+    </form>
+
+    <!-- 12-  Фрагмент с работающе формой для отправки на удаленный сервер оригинальных данных (заказы из магазина, отзывы на что-либо, или другое относящееся к тематике сайта, названия переменных (атрибут - name) должны соответствовать решаемой задаче, форма должна обязательно содержить следующие типы: text, number, radio, checkbox, date, password, hiddden и возможность отправлять на удаленный сервер значения по-умолчанию; -->
+
+    <h1 class="h-tittle2">Отправка контактных данных</h1>
+    <form class="form-twelve" id="contactForm">
+      <label for="lastName">Фамилия:</label>
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        placeholder="Логинова"
+        required
+      /><br />
+
+      <label for="firstName">Имя:</label>
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        placeholder="Вероника"
+        required
+      /><br />
+
+      <label for="mobilePhone">Мобильный телефон:</label>
+      <input
+        type="tel"
+        id="mobilePhone"
+        name="mobilePhone"
+        placeholder="+7903521676"
+        required
+      /><br />
+
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="vereneja1708"
+        required
+      /><br />
+
+      <label for="messageDate">Дата отправки сообщения:</label>
+      <input type="date" id="messageDate" name="messageDate" required /><br />
+
+      <button class="send-forma" type="submit">Отправить заявку</button>
+    </form>
+
+    <script>
+      document
+        .getElementById('myForm')
+        .addEventListener('submit', function (event) {
+          event.preventDefault()
+
+          const formData = new FormData(this)
+
+          fetch('какойто_удаленный_сервер_url', {
+            method: 'POST',
+            body: formData
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log('Данные успешно отправлены:', data)
+              // Дополнительные действия после успешной отправки данных
+            })
+            .catch((error) => {
+              console.error('Ошибка отправки данных:', error)
+              // Дополнительные действия в случае ошибки отправки
+            })
+        })
+    </script>
+
+    <!-- отправка данных к п12 -->
+    <script>
+      document
+        .getElementById('contactForm')
+        .addEventListener('submit', function (e) {
+          e.preventDefault()
+
+          const formData = new FormData(this)
+
+          fetch('ваш_удаленный_сервер_url', {
+            method: 'POST',
+            body: formData
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log('Данные успешно отправлены:', data)
+            })
+            .catch((error) => {
+              console.error('Ошибка отправки данных:', error)
+            })
+        })
+    </script>
+  </body>
+</html>
